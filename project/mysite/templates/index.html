@@ -1,0 +1,129 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static './assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static './assets/css/main.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header__frame">
+            <div class="header__title-name">
+                Energy monitoring
+            </div>
+            <div class="header__title-language">
+                Language: English
+            </div>
+            <div class="header__title-icon">
+                    <i class="header__title-icon-hov fas fa-bell"></i>
+                    <i class="header__title-icon-hov fas fa-exclamation-triangle"></i>
+                    <i class="header__title-icon-hov fas fa-plug"></i>
+                    <div class="header__title-icon-hov idcard">
+                        <i class="fas fa-user"></i>
+                        <i class="select-icon fas fa-sort-down"></i>
+                    </div>
+            </div>         
+        </div>
+    </header>
+    <div class="container">
+       <div class="container__application">
+            <div class="container__application-dashboard">
+                <a href="index.html" class="container__application-dashboard">Dashboard</a>
+            </div>
+            <div class="container__application-trend">
+                <a href="trend.html" class="container__application-trend">Trend</a>
+            </div>
+            <div class="container__application-report">
+                <a href="report.html" class="container__application-report">Report</a>
+            </div>
+            <div class="container__application-device">
+                <a href="" class="container__application-device">Device</a>
+            </div>
+            <div class="container__application-history">
+                <a href="" class="container__application-history">History</a>
+            </div>
+            <div class="container__application-information">
+                <a href="" class="container__application-information">Information</a>
+            </div>
+        </div> 
+        <div class="container__content">
+            <div class="container__content-title">   
+                Dashboard Device
+            </div>
+            <div class="container__content-item">
+                        Dashboard PAC3200
+            </div>
+            <div class="container__content-body">
+                <div class="container__content-body-clock">
+                    <div class="container__content-body-clock-min">
+                        <div class="container__content-body-clock-mn" id="container__content-body-clock-mn"></div>
+                      </div>
+                </div>
+                <div class="container__content-body-clock2">
+                    <div class="container__content-body-clock-min2">
+                        <div class="container__content-body-clock-mn2" id="container__content-body-clock-mn2"></div>
+                      </div>
+                </div>
+            </div>
+            <div class="container__content-table-container">
+                <table class ="container__content-voltage-table" > 
+                    <tr> 
+                        <td class="container__content-voltage-tablbtext">Voltage Phase AB:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_AB}} V</td>
+                        <td class="container__content-voltage-tablbtext">Voltage Phase AN:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_AN}} V</td>
+                    </tr>
+                    <tr> 
+                        <td class="container__content-voltage-tablbtext">Voltage Phase BC:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_BC}} V</td>
+                        <td class="container__content-voltage-tablbtext">Voltage Phase BN:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_BN}} V</td>
+                    </tr>
+                    <tr> 
+                        <td class="container__content-voltage-tablbtext">Voltage Phase CA:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_CA}} V</td>
+                        <td class="container__content-voltage-tablbtext">Voltage Phase CN:</td>
+                        <td class="container__content-voltagevalue-tablbtext">{{Voltage.0.Value_CN}} V</td>
+                    </tr>    
+                </table> 
+                <table class ="container__content-current-table" > 
+                    <tr> 
+                        <td class="container__content-current-tablbtext">Current Phase AN:</td>
+                        <td class="container__content-currentvalue-tablbtext">{{Current.0.Value_AN}} A</td>               
+                    </tr>
+                    <tr> 
+                        <td class="container__content-current-tablbtext">Current Phase BN:</td>
+                        <td class="container__content-currentvalue-tablbtext">{{Current.0.Value_BN}} A</td>           
+                    </tr>
+                    <tr> 
+                        <td class="container__content-current-tablbtext">Current Phase CN:</td>
+                        <td class="container__content-currentvalue-tablbtext">{{Current.0.Value_CN}} A</td>
+                    </tr>               
+                </table> 
+            </div>
+            <div class="container__content-tableTHD-container">
+                <table class="container__content-voltageTHD-table"> 
+                    <tr> 
+                        <td class="container__content-voltage-tablbtext">THD Voltage (%):</td>
+                        <td class="container__content-voltagevalue-tablbtext">12.565 %</td>
+                        <td class="container__content-voltagevalue-tablbtext">12 %</td>
+                        <td class="container__content-voltagevalue-tablbtext">12 %</td>
+                    </tr>                      
+                </table>     
+                <table class="container__content-currentTHD-table"> 
+                    <tr> 
+                        <td class="container__content-current-tablbtext">THD Voltage (%):</td>
+                        <td class="container__content-currentvalue-tablbtext">12 % </td>
+                        <td class="container__content-currentvalue-tablbtext">12 %</td>
+                        <td class="container__content-currentvalue-tablbtext">12 %</td>
+                    </tr>                   
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
